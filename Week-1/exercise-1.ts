@@ -61,3 +61,26 @@ function averageHours(gameList: IGames): number {
 }
 
 console.log("Average gaming hours :", averageHours(games));
+
+// Function to sort games by status
+
+function sortedGamesByStatus(gameList: IGames) {
+  return gameList.reduce(
+    (gamesByStatus, currentGame) => {
+      if (currentGame.finished) {
+        gamesByStatus.finished.push(currentGame.title)
+      } else if (currentGame.hoursPlayed === 0) {
+        gamesByStatus.notStarted.push(currentGame.title)
+      } else {
+        gamesByStatus.inProgress.push(currentGame.title)
+      }
+      return gamesByStatus;
+    },
+    {
+      finished: [] as string[],
+      notStarted: [] as string[],
+      inProgress: [] as string[]
+    }
+  );
+};
+console.log(sortedGamesByStatus(games));
