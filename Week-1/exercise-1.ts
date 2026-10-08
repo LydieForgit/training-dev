@@ -84,3 +84,12 @@ function sortedGamesByStatus(gameList: IGames) {
   );
 };
 console.log(sortedGamesByStatus(games));
+
+// Function to search games by name
+
+function searchGame(gameList: IGames, text: string): IGames {
+  return gameList.filter((game) => game.title.toLowerCase().includes(text.toLowerCase()))
+}
+console.log("searching 'el':", searchGame(games, "el"));
+console.log("searching 'HADES':",searchGame(games, "HADES"));
+console.log("searching 'zzz':",searchGame(games, "zzz"));
