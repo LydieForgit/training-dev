@@ -94,4 +94,4 @@ console.log("searching 'el':", searchGame(games, "el"));
 console.log("searching 'HADES':",searchGame(games, "HADES"));
 console.log("searching 'zzz':",searchGame(games, "zzz"));
 
-// Git exercice branche B
+// Git exercise branche-a
