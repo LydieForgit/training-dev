@@ -95,3 +95,22 @@ console.log("searching 'HADES':",searchGame(games, "HADES"));
 console.log("searching 'zzz':",searchGame(games, "zzz"));
 
 // Git exercise branche-a
+// Week 2
+
+// Function to add a new game and return a new tab without editing the original (indice : l’opérateur ... que tu as déjà utilisé).
+function addGame(gameList: IGames, newGame: IGame): IGames {
+  const copyGameList = [...gameList];
+  copyGameList.push(newGame);
+  return copyGameList
+}; 
+
+console.log("add game :", addGame(games, {
+  title: "Outer Wilds",
+  hoursPlayed: 20,
+  owned: true,
+  finished: false,
+  toStream: true
+}))
+
+
+//toggleFinished(gameList, title) qui renvoie un nouveau tableau où le jeu portant ce titre a son finished inversé (indice : map, et { ...game, finished: !game.finished }).
