@@ -112,5 +112,17 @@ console.log("add game :", addGame(games, {
   toStream: true
 }))
 
-
 //toggleFinished(gameList, title) qui renvoie un nouveau tableau où le jeu portant ce titre a son finished inversé (indice : map, et { ...game, finished: !game.finished }).
+
+function toggleFinished(gameList: IGames, title: string): IGames {
+  return gameList.map((game) => {
+    if (game.title.toLowerCase() === title.toLowerCase()) {
+      return {...game, finished: !game.finished};
+    }
+    return game;
+  });
+}
+
+const updated = toggleFinished(games, "celeste");
+console.log(updated[1].finished); // true
+console.log(games[1].finished);   // false (l'original n'a pas bougé)
